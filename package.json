@@ -6,7 +6,6 @@
   "author": "Tim Brugman <tim@timbrugman.com> (https://timbr.dev/)",
   "private": "true",
   "scripts": {
-    "postinstall": "npx gulp --env=prod",
     "prod": "npx gulp --env=prod",
     "dev": "npx gulp",
     "watch": "npx gulp watch"
