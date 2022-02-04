@@ -22,5 +22,5 @@ jobs:
           port: 21
           exclude: |
             *
-            !app/*
-            !public_html/*
+            !app/**
+            !public_html/**
