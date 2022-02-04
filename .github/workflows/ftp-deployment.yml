@@ -20,4 +20,3 @@ jobs:
           password: ${{ secrets.PROD_FTP_PASS }}
           protocol: ftp
           port: 21
-          dry-run: true
