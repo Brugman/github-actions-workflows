@@ -1,0 +1,35 @@
+name: gulp pnpm + ftps deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    name: Build & deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repo
+        uses: actions/checkout@v2
+
+      - name: Get PNPM
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: latest
+          run_install: true
+
+      - name: Build with Gulp
+        run: pnpm gulp --env=prod
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_FTPS_USER }}
+          password: ${{ secrets.PROD_FTPS_PASS }}
+          protocol: ftps
+          port: 21
+          exclude: |
+            *
+            !app/**
+            !public_html/**
