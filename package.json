@@ -1,0 +1,34 @@
+{
+  "name": "eksjun",
+  "version": "0.1.0",
+  "description": "",
+  "license": "UNLICENSED",
+  "author": "Tim Brugman <tim@timbrugman.com> (https://timbr.dev/)",
+  "private": "true",
+  "scripts": {
+    "postinstall": "npx gulp --env=prod",
+    "prod": "npx gulp --env=prod",
+    "dev": "npx gulp",
+    "watch": "npx gulp watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^7.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "minimist": "^1.2.5"
+  }
+}
