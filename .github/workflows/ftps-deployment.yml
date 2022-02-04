@@ -1,0 +1,26 @@
+name: ftps deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use repo
+        uses: actions/checkout@v2
+
+      - name: Deploy files
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_FTPS_USER }}
+          password: ${{ secrets.PROD_FTPS_PASS }}
+          protocol: ftps
+          port: 21
+          exclude: |
+            *
+            !app/**
+            !public_html/**
