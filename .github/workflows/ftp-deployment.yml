@@ -21,9 +21,6 @@ jobs:
           protocol: ftp
           port: 21
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
             *
-            !app/
-            !public_html/
+            !app/**
+            !public_html/**
