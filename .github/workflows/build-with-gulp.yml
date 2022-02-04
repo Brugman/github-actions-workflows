@@ -1,20 +1,21 @@
-name: build with gulp
+name: gulp npm
 
 on:
   workflow_dispatch:
 
 jobs:
-  one:
-    name: the first
+  build:
+    name: Build CSS & JS
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
 
-      - name: Build
+      - name: Build with npm
         run: npm i
+        run: npx gulp --env=prod
