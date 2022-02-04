@@ -20,3 +20,10 @@ jobs:
           password: ${{ secrets.PROD_FTP_PASS }}
           protocol: ftp
           port: 21
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            /*
+            !app/
+            !public_html/
