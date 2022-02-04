@@ -13,8 +13,9 @@ jobs:
 
       - name: Use PNPM
         uses: pnpm/action-setup@v2.0.1
-        
-      - name: Install packages
-        run: pnpm i
+        with:
+          version: latest
+          run_install: true
+
       - name: Run Gulp build
         run: pnpm gulp --env=prod
