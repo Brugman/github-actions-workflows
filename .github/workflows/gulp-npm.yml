@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Build with npm
+      - name: Install packages
         run: npm i
+      - name: Run Gulp build
         run: npx gulp --env=prod
