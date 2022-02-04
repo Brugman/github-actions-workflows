@@ -24,6 +24,6 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
-            /*
+            *
             !app/
             !public_html/
