@@ -12,6 +12,17 @@ jobs:
       - name: Use repo
         uses: actions/checkout@v2
 
+      - name: Remove dev files
+        run: |
+          echo --- BEFORE
+          ls -a
+          shopt -s extglob
+          shopt -s dotglob
+          rm -r !("app"|"public_html")
+          echo
+          echo --- AFTER
+          ls -a
+
       - name: Deploy to Staging server
         uses: easingthemes/ssh-deploy@main
         env:
