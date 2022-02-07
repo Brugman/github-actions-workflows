@@ -11,3 +11,14 @@ jobs:
     steps:
       - name: Use repo
         uses: actions/checkout@v2
+
+      - name: Deploy to Staging server
+          uses: easingthemes/ssh-deploy@main
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_KEY }}
+            ARGS: "-rltgoDzvO"
+            # SOURCE: "dist/"
+            REMOTE_HOST: ${{ secrets.PROD_SSH_HOST }}
+            REMOTE_USER: ${{ secrets.PROD_SSH_USER }}
+            TARGET: '/home/demo.com/'
+            # EXCLUDE: "/dist/, /node_modules/"
