@@ -1,10 +1,8 @@
 # GitHub Actions Workflows
 
-Go to `/.github/workflows/`.
-
 A collection of tested workflows that you can customize and combine.
 
-Avg Duration was measured by taking the average of 5 runs. Much science.
+This repo is about `/.github/workflows/`, all other files are for testing.
 
 Task | Method | Avg Duration (s)
 :--- |:--- |---:
@@ -18,4 +16,6 @@ Deploy | ftp | 19 | ftp pass
 Deploy | ftps | 19 | ftp pass
 Deploy | scp | 27 | ssh pass
 Deploy | rsync | 16 | ssh key
+
+Avg Duration was measured by taking the average of 5 runs. Much science.
 
