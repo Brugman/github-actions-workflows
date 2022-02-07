@@ -22,6 +22,4 @@ jobs:
           password: ${{ secrets.PROD_SSH_PASS }}
           local_folder: .
           remote_folder: '/home/demo.com/'
-          include: |
-            app
-            public_html
+          include: ['app']
