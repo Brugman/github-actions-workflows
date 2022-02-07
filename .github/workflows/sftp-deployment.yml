@@ -1,0 +1,28 @@
+name: sftp deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use repo
+        uses: actions/checkout@v2
+
+      - name: Deploy files
+        uses: sand4rt/ftp-deployer@v1.3
+        with:
+          sftp: true
+          host: ${{ secrets.PROD_SSH_HOST }}
+          port: 21
+          username: ${{ secrets.PROD_SSH_USER }}
+          password: ${{ secrets.PROD_SSH_PASS }}
+          # remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }}
+          # local_folder: dist # optional, local path, default is: dist
+          # cleanup: false # optional, remove existing files inside FTP remote folder
+          # pasive: true # optional
+          include: ['app','public_html'] # optional, e.g. ['dist']
+          exclude: [] # optional, e.g. ['node_modules/**', '.git/**', '*.env']
