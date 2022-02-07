@@ -14,10 +14,12 @@ jobs:
 
       - name: Remove dev files
         run: |
-          ls
           shopt -s extglob
           shopt -s dotglob
+          echo --- BEFORE
+          ls
           rm -r !("app"|"public_html")
+          echo --- AFTER
           ls
 
       - name: rsync deployments
