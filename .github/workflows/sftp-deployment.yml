@@ -20,9 +20,9 @@ jobs:
           port: 22
           username: ${{ secrets.PROD_SSH_USER }}
           password: ${{ secrets.PROD_SSH_PASS }}
+          local_folder: '/'
           remote_folder: '/home/demo.com'
-          # local_folder: dist # optional, local path, default is: dist
+          include: ['app','public_html'] # optional, e.g. ['dist']
           # cleanup: false # optional, remove existing files inside FTP remote folder
           # pasive: true # optional
-          # include: ['app','public_html'] # optional, e.g. ['dist']
           # exclude: [] # optional, e.g. ['node_modules/**', '.git/**', '*.env']
