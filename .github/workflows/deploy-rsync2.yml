@@ -12,16 +12,6 @@ jobs:
       - name: Use repo
         uses: actions/checkout@v2
 
-      - name: Remove dev files
-        run: |
-          shopt -s extglob
-          shopt -s dotglob
-          echo --- BEFORE
-          ls
-          rm -r !("app"|"public_html")
-          echo --- AFTER
-          ls
-
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2
         with:
