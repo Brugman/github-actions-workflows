@@ -17,8 +17,8 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_KEY }}
           ARGS: "-rltgoDzvO"
-          SOURCE: ['app/','public_html/']
+          SOURCE: ''
           REMOTE_HOST: ${{ secrets.PROD_SSH_HOST }}
           REMOTE_USER: ${{ secrets.PROD_SSH_USER }}
           TARGET: '/home/demo.com/'
-          # EXCLUDE: "/dist/, /node_modules/"
+          EXCLUDE: "*, !/app/, !/public_html"
