@@ -14,9 +14,11 @@ jobs:
 
       - name: Remove dev files
         run: |
+          ls
           shopt -s extglob
           shopt -s dotglob
           rm -r !("app"|"public_html")
+          ls
 
       - name: Deploy to Staging server
         uses: easingthemes/ssh-deploy@main

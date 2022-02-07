@@ -14,9 +14,11 @@ jobs:
 
       - name: Remove dev files
         run: |
+          ls
           shopt -s extglob
           shopt -s dotglob
           rm -r !("app"|"public_html")
+          ls
 
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2
