@@ -1,0 +1,23 @@
+name: rsync2 deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use repo
+        uses: actions/checkout@v2
+
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --delete
+        #   path: src/
+          remote_path: /home/demo.com/
+          remote_host: ${{ secrets.PROD_SSH_HOST }}
+          remote_user: ${{ secrets.PROD_SSH_USER }}
+          remote_key: ${{ secrets.PROD_SSH_KEY }}
