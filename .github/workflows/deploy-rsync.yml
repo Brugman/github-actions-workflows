@@ -21,5 +21,4 @@ jobs:
           REMOTE_HOST: ${{ secrets.PROD_SSH_HOST }}
           REMOTE_USER: ${{ secrets.PROD_SSH_USER }}
           TARGET: '/home/demo.com/'
-        #   EXCLUDE: "!/app/, !/public_html"
-        # this action can only send all files over atm
+          # sends all files, or 1 dir
