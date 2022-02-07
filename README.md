@@ -6,8 +6,8 @@ Avg Duration was measured by taking the average of 5 runs. Much science.
 
 Task | Method | Avg Duration (s)
 :--- |:--- |---:
-Build | npm | 43
-Build | yarn | 36
+Build | npm | 32
+Build | yarn | 37
 Build | pnpm | 30
 
 Task | Method | Avg Duration (s) | Auth
