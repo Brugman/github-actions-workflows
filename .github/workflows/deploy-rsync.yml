@@ -1,6 +1,10 @@
 name: deployment rsync
 
 on:
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -14,16 +18,11 @@ jobs:
 
       - name: Remove dev files
         run: |
-          echo --- BEFORE
-          ls -a
           shopt -s extglob
           shopt -s dotglob
           rm -r !("app"|"public_html")
-          echo
-          echo --- AFTER
-          ls -a
 
-      - name: Deploy to Staging server
+      - name: Deploy files
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_KEY }}

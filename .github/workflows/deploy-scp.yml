@@ -1,6 +1,10 @@
 name: deployment scp
 
 on:
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -12,7 +16,7 @@ jobs:
       - name: Use repo
         uses: actions/checkout@v2
 
-      - name: copy file via ssh password
+      - name: Deploy files
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.PROD_SSH_HOST }}
