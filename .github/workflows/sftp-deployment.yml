@@ -20,5 +20,5 @@ jobs:
           port: 22
           username: ${{ secrets.PROD_SSH_USER }}
           password: ${{ secrets.PROD_SSH_PASS }}
-          local_folder: /
+          local_folder: .
           remote_folder: '/home/demo.com/'
