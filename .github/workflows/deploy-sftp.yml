@@ -23,6 +23,6 @@ jobs:
           remote_folder: /home/demo.com/
           local_folder: /
           cleanup: false
-          include: []
-          exclude: []
+          include: '["app", "public_html"]'
+          exclude: '[]'
           pasive: true
