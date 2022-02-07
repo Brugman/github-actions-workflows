@@ -1,5 +1,7 @@
 # GitHub Actions Workflows
 
+Go to `/.github/workflows/`.
+
 A collection of tested workflows that you can customize and combine.
 
 Avg Duration was measured by taking the average of 5 runs. Much science.
