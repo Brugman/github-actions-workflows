@@ -11,3 +11,13 @@ jobs:
     steps:
       - name: Use repo
         uses: actions/checkout@v2
+
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          password: ${{ secrets.PROD_SSH_PASS }}
+          port: 22
+        #   source: "tests/a.txt,tests/b.txt"
+          target: "/home/demo.com/"

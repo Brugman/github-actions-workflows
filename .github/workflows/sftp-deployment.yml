@@ -11,15 +11,3 @@ jobs:
     steps:
       - name: Use repo
         uses: actions/checkout@v2
-
-      - name: Deploy files
-        uses: sand4rt/ftp-deployer@v1.3
-        with:
-          sftp: true
-          host: ${{ secrets.PROD_SSH_HOST }}
-          port: 22
-          username: ${{ secrets.PROD_SSH_USER }}
-          password: ${{ secrets.PROD_SSH_PASS }}
-          local_folder: .
-          remote_folder: /home/demo.com/
-          exclude: '["!app/**", "!public_html/**"]'
