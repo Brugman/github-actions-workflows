@@ -1,6 +1,6 @@
-# eksjuns
+# GitHub Actions Workflows
 
-Collection of workflow configurations.
+A collection of tested workflows that you can customize and combine.
 
 Avg Duration was measured by taking the average of 5 runs. Much science.
 
@@ -8,7 +8,7 @@ Task | Method | Avg Duration (s)
 :--- |:--- |---:
 Build | npm | 32
 Build | yarn | 37
-Build | pnpm | 30
+Build | pnpm | 27
 
 Task | Method | Avg Duration (s) | Auth
 :--- |:--- |---: |:---
