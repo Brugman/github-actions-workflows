@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.PROD_SSH_USER }}
           password: ${{ secrets.PROD_SSH_PASS }}
           port: 22
-          source: "*"
+          source: "app/*,public_html/*"
           target: "/home/demo.com/"
