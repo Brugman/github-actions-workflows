@@ -12,4 +12,17 @@ jobs:
       - name: Use repo
         uses: actions/checkout@v2
 
-        # todo
+      - name: FTP Deployer
+        uses: sand4rt/ftp-deployer@v1.3
+        with:
+          sftp: true
+          host: ${{ secrets.PROD_SSH_HOST }}
+          port: 22
+          username: ${{ secrets.PROD_SSH_USER }}
+          password: ${{ secrets.PROD_SSH_PASS }}
+          remote_folder: /home/demo.com/
+          local_folder: /
+          cleanup: false
+          include: ['app','public_html']
+          exclude: []
+          pasive: true
