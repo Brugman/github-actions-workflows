@@ -17,7 +17,7 @@ jobs:
         with:
           sftp: true
           host: ${{ secrets.PROD_SSH_HOST }}
-          port: 21
+          port: 22
           username: ${{ secrets.PROD_SSH_USER }}
           password: ${{ secrets.PROD_SSH_PASS }}
           # remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }}
