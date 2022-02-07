@@ -1,4 +1,4 @@
-name: gulp yarn
+name: build yarn
 
 on:
   # push:

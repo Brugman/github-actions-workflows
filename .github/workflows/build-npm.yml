@@ -1,4 +1,4 @@
-name: gulp npm
+name: build npm
 
 on:
   # push:

@@ -1,4 +1,4 @@
-name: gulp pnpm
+name: build pnpm
 
 on:
   # push:
