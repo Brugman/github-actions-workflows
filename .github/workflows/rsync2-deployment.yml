@@ -1,4 +1,4 @@
-name: rsync2 deployment
+name: deployment rsync (2)
 
 on:
   workflow_dispatch:

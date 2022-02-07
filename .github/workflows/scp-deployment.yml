@@ -1,4 +1,4 @@
-name: scp deployment
+name: deployment scp
 
 on:
   workflow_dispatch:

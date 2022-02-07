@@ -1,4 +1,4 @@
-name: sftp deployment
+name: deployment sftp
 
 on:
   workflow_dispatch:

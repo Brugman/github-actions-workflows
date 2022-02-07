@@ -1,4 +1,4 @@
-name: rsync deployment
+name: deployment rsync
 
 on:
   workflow_dispatch:

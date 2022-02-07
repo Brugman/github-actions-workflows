@@ -1,4 +1,4 @@
-name: ftps deployment
+name: deployment ftps
 
 on:
   workflow_dispatch:
