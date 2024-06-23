@@ -1,0 +1,38 @@
+name: zero downtime deployment static
+
+on:
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use repo
+        uses: actions/checkout@v4
+
+      - name: SSH SCP SSH
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        env:
+          PROJECT_ROOT: ${{ secrets.PROD_PROJECT_ROOT }}
+        with:
+          host: ${{ secrets.PROD_SSH_HOST }}
+          user: ${{ secrets.PROD_SSH_USER }}
+          pass: ${{ secrets.PROD_SSH_PASS }}
+          port: ${{ secrets.PROD_SSH_PORT }}
+          connect_timeout: 5s
+          first_ssh: |
+            cd $PROJECT_ROOT
+            mkdir -p public_html_new
+          scp: |
+            "." => "$PROJECT_ROOT/public_html_new/"
+          last_ssh: |
+            cd $PROJECT_ROOT
+            mv public_html public_html_old
+            mv public_html_new public_html
+            rm -rf public_html_old
