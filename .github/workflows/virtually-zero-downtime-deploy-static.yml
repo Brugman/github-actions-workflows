@@ -1,4 +1,4 @@
-name: zero downtime deployment static
+name: virtually zero downtime deployment static
 
 on:
   # push:
